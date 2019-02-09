@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+solution: NetCoreServer.sln
+
+install:
+  - dotnet restore
+
+dotnet: 3.0.100-preview-010184
+script:
+  - dotnet msbuild /t:Restore,Rebuild,Publish /p:OutputPath=bin/apphosting /p:Configuration=Release /p:Platform=x64
